@@ -1,0 +1,3 @@
+Instalar linux sin interfaz grafica bajar un proyecto, hacer cambios en un archivo de texto y luego pushearlos
+puede utilizar la clave token
+
