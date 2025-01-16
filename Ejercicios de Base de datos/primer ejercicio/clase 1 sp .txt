@@ -1,0 +1,168 @@
+--Crear una base datos Colegio
+
+	--3 tablas 
+		--grados
+		--estudiantes
+		--padres
+		--cursos
+
+-- crear las tablas
+
+-- insertar data masiva
+
+-- sp(varios)
+
+-- vista
+
+--BD
+CREATE DATABASE EscuelaDB;
+
+--DROP TABLE TB_ESTUDIANTES2
+	
+CREATE TABLE TB_ESTUDIANTES 
+(
+	ID_ESTUDIANTES		    INT PRIMARY KEY IDENTITY(1,1),
+	NOMBRE_ESTUDIANTES		VARCHAR(50),
+	DIRECCION_ESTUDIANTES   VARCHAR(100),
+	TELEFONO_ESTUDIANTES    VARCHAR(100),
+	EDAD_ESTUDIANTES		INT,
+	ID_GRADO				INT
+);
+
+SELECT * FROM TB_ESTUDIANTES
+
+INSERT INTO TB_ESTUDIANTES (NOMBRE_ESTUDIANTES,APELLIDOS_ESTUDIANTES,DIRECCION_ESTUDIANTES,TELEFONO_ESTUDIANTES)  VALUES ('Hector Agusto', 'Cruz Romero','4ta. Calle, Coatepeque, Quetzaltenango', '5565-5656')
+
+
+/*ejercicios 
+
+1. 100 registros
+	50 regostros chat
+	
+	
+	------------------------------------
+	INSERT INTO TB_ESTUDIANTES (NOMBRE_ESTUDIANTES, APELLIDOS_ESTUDIANTES, DIRECCION_ESTUDIANTES, TELEFONO_ESTUDIANTES)  
+VALUES 
+
+('Ana María', 'González López', 'Zona 1, Quetzaltenango', '4578-1245'),
+('Carlos Alberto', 'Rodríguez Pérez', 'Colonia Santa Fe, Guatemala', '3215-8741'),
+('Luis Antonio', 'Martínez Ramírez', 'Aldea El Zapote, Chiquimula', '4412-9987'),
+('María Fernanda', 'Hernández Morales', 'Residenciales Las Palmeras, Escuintla', '5587-4421'),
+('José Andrés', 'López García', 'Barrio La Democracia, Totonicapán', '4521-7785'),
+('Lucía Isabel', 'Ruiz Sánchez', 'Calle Real, Jalapa', '3314-2213'),
+('Miguel Ángel', 'Castillo Díaz', 'Colonia El Milagro, Guatemala', '5547-3321'),
+('Claudia Alejandra', 'Ortiz Ramírez', 'Zona 10, Cobán, Alta Verapaz', '4778-9814'),
+('Fernando Enrique', 'Flores Jiménez', 'Barrio El Calvario, Retalhuleu', '5578-1247'),
+('Gabriela Sofía', 'Torres Méndez', 'Zona 3, Mazatenango, Suchitepéquez', '4125-7784'),
+('David Estuardo', 'Navarro López', 'Colonia Santa Clara, San Marcos', '4821-5454'),
+('Paola Andrea', 'Cifuentes Juárez', 'Calle Principal, Santa Rosa', '3287-4412'),
+('Juan Sebastián', 'Morales Ortiz', 'Residenciales Vista Hermosa, Guatemala', '5687-8741'),
+('Daniel Alejandro', 'Vásquez Lara', 'Zona 6, Totonicapán', '4825-9981'),
+('Alejandra Beatriz', 'Ramírez Rivera', 'Barrio La Libertad, Escuintla', '5521-8745'),
+('Cristian Eduardo', 'Castro Herrera', 'Aldea San Juan, Huehuetenango', '4512-9941'),
+('Karla Elizabeth', 'Salazar Gómez', 'Colonia Jardines del Norte, Guatemala', '5597-4423'),
+('Jorge Luis', 'García Hernández', 'Calle Central, Quiché', '4787-8812'),
+('Andrea Carolina', 'Lemus Ramírez', 'Barrio El Rosario, Jutiapa', '4597-2278'),
+('Roberto Javier', 'Ortíz Fuentes', 'Zona 4, Chimaltenango', '4112-7798'),
+('Marcela Cristina', 'Álvarez Rodríguez', 'Colonia Santa Isabel, Guatemala', '5725-4431'),
+('Ricardo Antonio', 'Pérez Jiménez', 'Zona 2, Jalapa', '4857-2214'),
+('Luis Miguel', 'Ramírez Morales', 'Residenciales Villas del Sol, Zacapa', '4415-1125'),
+('Fernanda Paola', 'Lopez Morales', 'Colonia La Flor, Quetzaltenango', '3201-7458'),
+('Daniel Ernesto', 'Cruz Romero', 'Barrio El Centro, Guatemala', '5569-8741'),
+('Gloria Angélica', 'Pérez Rodríguez', 'Calle La Reforma, Escuintla', '4431-2234'),
+('Mario Estuardo', 'Guzmán Torres', 'Zona 8, Retalhuleu', '4789-4423'),
+('Diana Verónica', 'López Martínez', 'Colonia Los Olivos, Chiquimula', '3321-8847'),
+('Cristina Victoria', 'Santos Pérez', 'Aldea Las Brisas, Cobán', '4412-7758'),
+('Diego Francisco', 'Rodríguez Morales', 'Barrio La Asunción, Jutiapa', '4758-9921'),
+('Luis Eduardo', 'López Díaz', 'Residenciales La Aurora, Zacapa', '3325-2214'),
+('Sandra Margarita', 'Ortiz López', 'Zona 5, Totonicapán', '5523-4418'),
+('Roberto Carlos', 'García Castillo', 'Colonia Las Fuentes, Jalapa', '4577-8845'),
+('Jennifer Anahí', 'Méndez Ramírez', 'Calle Real, Chiquimula', '3318-4478'),
+('Luis Alejandro', 'Martínez Vásquez', 'Zona 7, Guatemala', '4412-8857'),
+('Gabriela Camila', 'Torres Jiménez', 'Barrio El Carmen, Huehuetenango', '4551-9923'),
+('José Daniel', 'Ruiz Hernández', 'Residenciales Santa Fe, Escuintla', '4712-3344'),
+('Ana Patricia', 'Pérez Morales', 'Zona 1, San Marcos', '4558-2247'),
+('Miguel Ángel', 'Salazar López', 'Colonia Las Brisas, Guatemala', '5565-1144'),
+('Lucía Fernanda', 'López Herrera', 'Calle Principal, Totonicapán', '4478-2257'),
+('José Eduardo', 'Ramírez Díaz', 'Zona 2, Mazatenango', '3311-8895'),
+('Paola Andrea', 'Hernández Gómez', 'Residenciales El Encanto, Cobán', '4787-3325'),
+('Carlos Fernando', 'Rodríguez Morales', 'Colonia San Juan, Retalhuleu', '3215-8874'),
+('Andrea Sofía', 'Juárez López', 'Zona 10, Guatemala', '4599-7744'),
+('Jorge Mario', 'Navarro Sánchez', 'Barrio El Pilar, Jutiapa', '4778-2247'),
+('Claudia Patricia', 'Guzmán Díaz', 'Colonia Vista Bella, Zacapa', '5598-4412'),
+('Luis Alberto', 'Morales Herrera', 'Zona 3, Quetzaltenango', '4587-2251'),
+('Cristina Isabel', 'Cruz López', 'Barrio Santa Ana, Escuintla', '4721-3324');
+
+	
+	
+	25 sp
+	
+	
+	SELECT * FROM TB_ESTUDIANTES 
+		
+		CREATE PROCEDURE CREACION_DATA_ESTUDIANTES_SP
+		@CANTIDAD_NOMBRES INT -- PARAMETRO DE ENTRADA
+		AS
+		BEGIN
+
+			--VARIABLE
+			DECLARE @PRIMER_NOMBRE VARCHAR(15);
+			DECLARE @SEGUNDO_NOMBRE VARCHAR(15);
+			DECLARE @PRIMER_APELLIDO VARCHAR(15);
+			DECLARE @SEGUNDO_APELLIDO VARCHAR(15);
+			DECLARE @VALORINICIAL INT;
+			
+			SET @VALORINICIAL = 1
+			--ARMAR UN NOMBRE DE 4 CAMPOS N1.N2.A1.A2
+			--SELECT NOMBRE FROM TB_TEMPORAL_NOMBRE
+			--SELECT APELLIDOS FROM TB_TEMPORAL_APELLIDO
+			-- COMO OBTENER UN NOMBRE ALEATORIA 
+			WHILE (@VALORINICIAL < = @CANTIDAD_NOMBRES)
+			BEGIN
+				SET @PRIMER_NOMBRE = (select top 1 percent NOMBRE from TB_TEMPORAL_NOMBRE order by newid())
+				SET @SEGUNDO_NOMBRE = (select top 1 percent NOMBRE from TB_TEMPORAL_NOMBRE order by newid())
+				SET @PRIMER_APELLIDO = (select top 1 percent APELLIDOS from TB_TEMPORAL_APELLIDO order by newid())
+				SET @SEGUNDO_APELLIDO = (select top 1 percent APELLIDOS from TB_TEMPORAL_APELLIDO order by newid())
+
+				INSERT INTO TB_ESTUDIANTES 
+					(
+						NOMBRE_ESTUDIANTES,
+						APELLIDOS_ESTUDIANTES
+					)
+					VALUES 
+					(
+						@PRIMER_NOMBRE+' '+@SEGUNDO_NOMBRE,
+						@PRIMER_APELLIDO+' '+ @SEGUNDO_APELLIDO
+					)
+				SET @VALORINICIAL = @VALORINICIAL+1
+			END
+		END;
+
+		EXEC CREACION_DATA_ESTUDIANTES_SP 10
+			
+	
+
+	
+	
+	
+/*2. Generar una funcion que le asigne una edad a los estudiantes
+
+	ENTRE 7-13
+	
+  3. Asignar un grado a los estudiantes segun su edad
+	
+	PRIMERO A SEXTO
+	
+	7u8 primero
+	8-9 segundo
+	9-10 tercero
+	10-11 cuarto
+	11-12 quinto
+	12-13 sexto
+	
+*/
+
+
+crear un sp gener x nombres, asigne una edad, asigne un grado
+	--direccion
+	--telefono
