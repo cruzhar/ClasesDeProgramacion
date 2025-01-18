@@ -18,7 +18,6 @@ CREATE TABLE Estudiantes (
     Grado INT
 );
 
-
 /*Seccion 4: Agregar datos a una tabla
 Ejercicio: Inserta tres registros en la tabla Estudiantes.*/
 INSERT INTO Estudiantes (ID, Nombre, Grado)
@@ -26,9 +25,9 @@ VALUES (1, 'Josue Vargas', 1),
        (2, 'Abner Maldonado', 2),
        (3, 'Carlos Samayoa', 3);
 
-
-/*Seccion 5:	Crear una tabla con una clave foránea
+/*Seccion 5: Crear una tabla con una clave foránea
 Ejercicio: Crea una tabla llamada Inscripciones que relacione a los Estudiantes con los Cursos.*/
+
 CREATE TABLE Cursos (
     CursoID INT PRIMARY KEY,
     NombreCurso NVARCHAR(50)
@@ -42,12 +41,11 @@ CREATE TABLE Inscripciones (
     FOREIGN KEY (CursoID) REFERENCES Cursos(CursoID)
 );
 
-
 /*Sección 2.1: Modificación de Bases de Datos
 Ejercicio: Cambia el nombre de la base de datos EscuelaDB a ColegioDB.*/
 ALTER DATABASE EscuelaDB MODIFY NAME =  ColegioDB;
 
-/*Seccion 7:	Agregar un archivo a una base de datos
+/*Seccion 7: Agregar un archivo a una base de datos
 Ejercicio: Agrega un archivo de datos secundario a la base de datos EscuelaDB.*/
 ALTER DATABASE EscuelaDB
 ADD FILE (
@@ -60,7 +58,6 @@ ADD FILE (
 
 /*Sección 8: Eliminar una tabla de una base de datos
 Ejercicio: Elimina la tabla Inscripciones de la base de datos EscuelaDB.*/
-
 USE EscuelaDB;
 DROP TABLE Inscripciones;
 
@@ -101,14 +98,11 @@ DROP DATABASE EscuelaDB;
 	    Nombre NVARCHAR(50)
 	);
 
-
-
 --Ejercicio: Respaldar una base de datos antes de eliminarla:
 	BACKUP DATABASE ConfiguradaDB
 	TO DISK = 'C:\SQL SERVER\MSSQL16.MSSQLSERVER\MSSQL\DATA\ConfiguradaDB.bak';
 
---Ejercicios para Modificar Tablas en SQL Server - Crear una tabla
-
+--Ejercicio: para Modificar Tablas en SQL Server - Crear una tabla
 CREATE TABLE Estudiantes 
 (
  ID INT PRIMARY KEY, 
@@ -123,19 +117,15 @@ DROP TABLE Estudiantes
 
 
 --Ejercicio: Agrega una columna llamada FechaNacimiento de tipo DATE a la tabla Estudiantes.
+ALTER TABLE Estudiantes
+  ADD FechaNacimiento DATE;
 
 ALTER TABLE Estudiantes
-ADD FechaNacimiento DATE;
-
-
-ALTER TABLE Estudiantes
-DROP COLUMN FechaNacimiento; --Eliminar una columna
-
+  DROP COLUMN FechaNacimiento; --Eliminar una columna
 
 --Ejercicio: Elimina la columna Correo de la tabla Estudiantes.
 ALTER TABLE Estudiantes
 DROP COLUMN Correo;
-
 
 --Modificar el tipo de dato de una columna
 ALTER TABLE Estudiantes
@@ -150,16 +140,16 @@ ALTER TABLE Estudiantes
 ALTER COLUMN Nombre NVARCHAR(100);
 
 SELECT * FROM ESTUDIANTES
-
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'ESTUDIANTES';
+
 EXEC sp_rename 'ID', 'nombre_completo', 'APELLIDO','EDAD','GRADO','FECHA'   ;
 
---5.	Cambiar el nombre de una columna
+--Ejercicio: Cambiar el nombre de una columna
 EXEC sp_rename 'Estudiantes.Nombre', 'NombreCompleto', 'COLUMN';
 
---6.	Agregar una columna con un valor predeterminado
+--Ejercicio: Agregar una columna con un valor predeterminado
 ALTER TABLE Estudiantes
 ADD Estado VARCHAR(20) DEFAULT 'Activo';
 
@@ -167,14 +157,13 @@ ADD Estado VARCHAR(20) DEFAULT 'Activo';
 ALTER TABLE Estudiantes
 ADD Activo BIT DEFAULT 1;
 
---7.	Renombrar la tabla
+--Ejercicio: Renombrar la tabla
 EXEC sp_rename 'Estudiantes', 'Alumnos';
 
 --Ejercicio: Cambia el nombre de la tabla Estudiantes a Alumnos.
 EXEC sp_rename 'Estudiantes', 'Alumnos';
 
 --8.	Agregar una clave foránea
-
 CREATE TABLE Estudiantes (
     ID INT PRIMARY KEY,
     Nombre VARCHAR(50),
@@ -216,7 +205,6 @@ CREATE INDEX IX_Grado ON Estudiantes(Grado);
 --11.	Cambiar el nombre de una restricción
 --Ejercicio: Cambia el nombre de una restricción existente (por ejemplo, una clave foránea llamada FK_EstudianteID) a FK_AlumnoID.
 EXEC sp_rename 'Inscripciones.FK_EstudianteID', 'FK_AlumnoID', 'OBJECT';
-
 
 --------------------------------------------Desafíos adicionales:------------------------------------------------
 --Agrega una restricción UNIQUE a la columna Correo para que no se repitan valores:
