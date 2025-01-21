@@ -8,3 +8,16 @@ esto es otra linea
 cree otra lina mas 
 
 pruebas2
+
+
+
+
+OPTIMIZAR CONSULTA 3RA PARTE
+
+TODOS LOS UPDATE EN UN SOLO LADO
+
+
+QUETZALTENANGO 
+SAN MARCOS
+
+4 MUNICIPIOS DE CADA UNO
