@@ -1,0 +1,23 @@
+-- tb_estudiantes (sexo) /M /F
+-- los nombres tiene que corresponder Jose Javier (Jose Roberta)
+-- Optimizar la consulta 
+    (5 minutos) - 30 segundos (20000) Registros
+
+    --Bulk Collet 
+
+
+--Padres Asignar un padre a cada tb_estudiantes (no puede tener asignado mas de 5 hijos)
+
+
+Reporteria
+    -- 10 reportes diferentes
+        select 
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 6) as sexto,
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 5) as quinto,
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 4) as cuartp,
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 3) as tercero,
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 2) as segundo,
+(select count(id_estudiante) from TB_ESTUDIANTES where id_grado = 1) as primero
+
+cuantos estudiantes hay por id_grado
+
