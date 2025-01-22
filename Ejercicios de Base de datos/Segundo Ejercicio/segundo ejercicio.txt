@@ -1,3 +1,6 @@
+SEmana 3 21-01-25
+falta
+
 -- tb_estudiantes (sexo) /M /F
 -- los nombres tiene que corresponder Jose Javier (Jose Roberta)
 -- Optimizar la consulta 
