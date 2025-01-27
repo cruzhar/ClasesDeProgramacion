@@ -1,7 +1,7 @@
 --sp listar
 --sp insertar
 --sp eliminar(desactivar)
---sp modificar
+--  
 
 --listar
 CREATE PROC [dbo].[SP_TB_NIVEL_USUARIO_LISTAR_SP]
