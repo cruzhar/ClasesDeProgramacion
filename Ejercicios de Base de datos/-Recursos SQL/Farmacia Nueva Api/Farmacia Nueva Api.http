@@ -1,0 +1,6 @@
+@Farmacia_Nueva_Api_HostAddress = http://localhost:5187
+
+GET {{Farmacia_Nueva_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
