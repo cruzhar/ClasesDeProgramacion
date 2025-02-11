@@ -12,25 +12,25 @@ namespace WebApi.Controllers
     public class UsuarioController : ApiController
     {
         // GET api/<controller>
-        public List<Usuario> Get()
+        public List<TB_USUARIO> Get()
         {
             return UsuarioData.Listar();
         }
 
         // GET api/<controller>/5
-        public Usuario Get(int id)
+        public TB_USUARIO Get(int id)
         {
             return UsuarioData.Obtener(id);
         }
 
         // POST api/<controller>
-        public bool Post([FromBody]Usuario oUsuario)
+        public bool Post([FromBody] TB_USUARIO oUsuario)
         {
             return UsuarioData.Registrar(oUsuario);
         }
 
         // PUT api/<controller>/5
-        public bool Put([FromBody]Usuario oUsuario)
+        public bool Put([FromBody] TB_USUARIO oUsuario)
         {
             return UsuarioData.Modificar(oUsuario);
         }

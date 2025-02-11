@@ -10,7 +10,7 @@ namespace WebApi.Data
 {
     public class UsuarioData
     {
-        public static bool Registrar(Usuario oUsuario)
+        public static bool Registrar(TB_USUARIO oUsuario)
         {
             using (SqlConnection oConexion = new SqlConnection(Conexion.rutaConexion))
             {
@@ -35,7 +35,7 @@ namespace WebApi.Data
             }
         }
 
-        public static bool Modificar(Usuario oUsuario)
+        public static bool Modificar(TB_USUARIO oUsuario)
         {
             using (SqlConnection oConexion = new SqlConnection(Conexion.rutaConexion))
             {
@@ -61,9 +61,9 @@ namespace WebApi.Data
             }
         }
 
-        public static List<Usuario> Listar()
+        public static List<TB_USUARIO> Listar()
         {
-            List<Usuario> oListaUsuario = new List<Usuario>();
+            List<TB_USUARIO> oListaUsuario = new List<TB_USUARIO>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.rutaConexion))
             {
                 SqlCommand cmd = new SqlCommand("usp_listar", oConexion);
@@ -78,7 +78,7 @@ namespace WebApi.Data
                         
                         while (dr.Read())
                         {
-                            oListaUsuario.Add(new Usuario() {
+                            oListaUsuario.Add(new TB_USUARIO() {
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 DocumentoIdentidad = dr["DocumentoIdentidad"].ToString(),
                                 Nombres = dr["Nombres"].ToString(),
@@ -102,9 +102,9 @@ namespace WebApi.Data
             }
         }
 
-        public static Usuario Obtener(int idusuario)
+        public static TB_USUARIO Obtener(int idusuario)
         {
-            Usuario oUsuario = new Usuario();
+            TB_USUARIO oUsuario = new TB_USUARIO();
             using (SqlConnection oConexion = new SqlConnection(Conexion.rutaConexion))
             {
                 SqlCommand cmd = new SqlCommand("usp_obtener", oConexion);
@@ -121,7 +121,7 @@ namespace WebApi.Data
 
                         while (dr.Read())
                         {
-                            oUsuario = new Usuario()
+                            oUsuario = new TB_USUARIO()
                             {
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 DocumentoIdentidad = dr["DocumentoIdentidad"].ToString(),

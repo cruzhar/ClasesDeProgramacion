@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApi.Models
 {
-    public class Usuario
+    public class TB_USUARIO
     {
         public int IdUsuario { get; set; }
         public string DocumentoIdentidad { get; set; }
